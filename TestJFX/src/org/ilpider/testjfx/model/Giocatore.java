@@ -1,14 +1,11 @@
 package org.ilpider.testjfx.model;
 
-import org.ilpider.testjfx.view.TestJFXController;
-
 public class Giocatore {
 
 	private String nome;
 	private int punti;
 	private boolean isN1Chiuso;
 	private boolean isN1Morto;
-	private TestJFXController controller;
 
 	public Giocatore(String nome, int punti) {
 //		super();
@@ -46,14 +43,6 @@ public class Giocatore {
 
 	public void setN1Morto(boolean isN1Morto) {
 		this.isN1Morto = isN1Morto;
-	}
-
-	public TestJFXController getController() {
-		return controller;
-	}
-
-	public void setController(TestJFXController controller) {
-		this.controller = controller;
 	}
 
 }

@@ -59,7 +59,7 @@
                   </RadioButton>
                   <RadioButton fx:id="rdb3" mnemonicParsing="false" onAction="#doRdbNumeroGiocatori" text="3" textAlignment="RIGHT" toggleGroup="$grpNumeroGiocatori" />
                   <RadioButton fx:id="rdb4" mnemonicParsing="false" onAction="#doRdbNumeroGiocatori" text="4" textAlignment="RIGHT" toggleGroup="$grpNumeroGiocatori" />
-                  <Button fx:id="btnNuovaPArtita" mnemonicParsing="false" onAction="#doNuovaPartita" text="Nuova Partita" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#doNuovaPartita" text="Nuova Partita" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
          </children>

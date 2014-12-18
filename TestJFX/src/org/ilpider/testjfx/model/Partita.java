@@ -1,17 +1,17 @@
 package org.ilpider.testjfx.model;
 
-import org.ilpider.testjfx.view.TestJFXController;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Partita {
 
 	private int numeroGiocatori;
-	private TestJFXController controller;
 
 	public Partita(int numeroGiocatori) {
 		this.numeroGiocatori = numeroGiocatori;
 	}
 
-	public int getNumeroGiocatori() {
+	public int getNumeroGiocatoriAttuali() {
 		return numeroGiocatori;
 	}
 
@@ -19,11 +19,15 @@ public class Partita {
 		this.numeroGiocatori = numeroGiocatori;
 	}
 
-	public TestJFXController getController() {
-		return controller;
-	}
+	public List<Giocatore> listGiocatori(int numeroGiocatori) {
+		List<Giocatore> giocatori = new ArrayList<>();
+		
+		for ( int i=0;i<numeroGiocatori;i++){
+			Giocatore g=new Giocatore("Giocatore n" + i, 0);
+			g.setNome("giocatore " + i);
+			giocatori.add(g);
+		}
 
-	public void setController(TestJFXController controller) {
-		this.controller = controller;
+		return giocatori;
 	}
 }

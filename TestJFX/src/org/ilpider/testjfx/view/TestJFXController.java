@@ -1,6 +1,6 @@
 package org.ilpider.testjfx.view;
 
-import org.ilpider.testjfx.Main;
+import org.ilpider.testjfx.MainTestJFX;
 import org.ilpider.testjfx.model.Giocatore;
 import org.ilpider.testjfx.model.Partita;
 
@@ -30,9 +30,11 @@ public class TestJFXController {
 	private RadioButton rdb4; // Value injected by FXMLLoader
 
 	@FXML
-	// fx:id="btnNuovaPArtita"
-	private Button btnNuovaPArtita; // Value injected by FXMLLoader
+	// fx:id="btnNuovaPartita"
+	private Button btnNuovaPartita; // Value injected by FXMLLoader
 
+	@FXML
+	// fx:id="btn1"
 	private Button btn1; // Value injected by FXMLLoader
 
 	@FXML
@@ -115,8 +117,13 @@ public class TestJFXController {
 	// fx:id="btnBull"
 	private Button btnBull; // Value injected by FXMLLoader
 
+	private MainTestJFX mainTestJFX;
 	private Giocatore model;
 	private Partita partita;
+
+	public void setMainTestJFX(MainTestJFX mainTestJFX) {
+		this.mainTestJFX = mainTestJFX;
+	}
 
 	public int getNumeroGiocatori() {
 		Toggle aaa = grpNumeroGiocatori.getSelectedToggle();
@@ -132,23 +139,28 @@ public class TestJFXController {
 		// bbb = model.getNome();
 		// System.out.println(bbb);
 		// model.setNome(aaa);
-		//System.out.println("Nel bottone leggo quanti giocatori ha la partita: " + getNumeroGiocatori());
-		System.out.println(partita.getNumeroGiocatori());
+		// System.out.println("Nel bottone leggo quanti giocatori ha la partita: "
+		// + getNumeroGiocatori());
+		System.out.println(partita.getNumeroGiocatoriAttuali());
+		
+		
 	}
 
 	@FXML
 	void doNuovaPartita(ActionEvent event) {
-//		partita = new Partita(getNumeroGiocatori());
-		Main.nuovaPartita(getNumeroGiocatori());
-		System.out.println("La nuova partita avra' " + getNumeroGiocatori() + " giocatori");
+		mainTestJFX.nuovaPartita(getNumeroGiocatori());
+		System.out.println("La nuova partita avra' "
+				+ partita.getNumeroGiocatoriAttuali() + " giocatori");
 	}
 
 	@FXML
 	void doRdbNumeroGiocatori(ActionEvent event) {
-		Main.nuovaPartita(getNumeroGiocatori());
-//		System.out.println(event.getSource());
-//		Toggle ccc = (Toggle) event.getSource();
-//		System.out.println(ccc.getUserData());
+		mainTestJFX.nuovaPartita(getNumeroGiocatori());
+		System.out.println("La nuova partita avra' "
+				+ partita.getNumeroGiocatoriAttuali() + " giocatori");
+		// System.out.println(event.getSource());
+		// Toggle ccc = (Toggle) event.getSource();
+		// System.out.println(ccc.getUserData());
 	}
 
 	@FXML
@@ -180,8 +192,6 @@ public class TestJFXController {
 		rdb2.setUserData(2);
 		rdb3.setUserData(3);
 		rdb4.setUserData(4);
-		// System.out.println("All'avvio la nuova partita avra' " + getNumeroGiocatori() + " giocatori");
-//		partita = new Partita(getNumeroGiocatori());
 	}
 
 	public Giocatore getModel() {
@@ -198,5 +208,6 @@ public class TestJFXController {
 
 	public void setPartita(Partita partita) {
 		this.partita = partita;
+
 	}
 }
