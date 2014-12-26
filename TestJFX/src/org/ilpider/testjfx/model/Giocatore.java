@@ -1,16 +1,26 @@
 package org.ilpider.testjfx.model;
 
+import javafx.scene.layout.BorderPane;
+
 public class Giocatore {
 
+	private int ID;
 	private String nome;
+	private BorderPane viewGiocatore;
 	private int punti;
-	private boolean isN1Chiuso;
-	private boolean isN1Morto;
 
 	public Giocatore(String nome, int punti) {
-//		super();
+		super();
 		this.nome = nome;
 		this.punti = punti;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 	public String getNome() {
@@ -21,6 +31,14 @@ public class Giocatore {
 		this.nome = nome;
 	}
 
+	public BorderPane getViewGiocatore() {
+		return viewGiocatore;
+	}
+
+	public void setViewGiocatore(BorderPane viewGiocatore) {
+		this.viewGiocatore = viewGiocatore;
+	}
+
 	public int getPunti() {
 		return punti;
 	}
@@ -28,21 +46,4 @@ public class Giocatore {
 	public void setPunti(int punti) {
 		this.punti = punti;
 	}
-
-	public boolean isN1Chiuso() {
-		return isN1Chiuso;
-	}
-
-	public void setN1Chiuso(boolean isN1Chiuso) {
-		this.isN1Chiuso = isN1Chiuso;
-	}
-
-	public boolean isN1Morto() {
-		return isN1Morto;
-	}
-
-	public void setN1Morto(boolean isN1Morto) {
-		this.isN1Morto = isN1Morto;
-	}
-
 }

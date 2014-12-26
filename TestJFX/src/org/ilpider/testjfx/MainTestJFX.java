@@ -16,15 +16,16 @@ import javafx.fxml.FXMLLoader;
 
 public class MainTestJFX extends Application {
 
-	private Stage primaryStage; //la finestra dell'applicazione
+	private Stage primaryStage; // la finestra dell'applicazione
 	private BorderPane root; // il layout del TestJFX.fxml
 	private GridPane layoutGiocatore; // il layout che contiene l'arrayGiocatore
-	private BorderPane[] arrayGiocatore; // l'array dei singolo Giocatore.fxml
-	private TestJFXController controllerRoot; // il controller del root (TestJFX.fxml) 
-	private GiocatoreController controllerGiocatore; // il controller del root (TestJFX.fxml) 
 	private Partita partita; // il modello della partita
 	private Giocatore model; // il modello del Giocatore
-	private int numeroGiocatori; 
+	private int numeroGiocatori;
+	private TestJFXController controllerRoot; // il controller del root
+												// (TestJFX.fxml)
+	private GiocatoreController controllerGiocatore; // il controller del
+														// layoutGiocatore(Giocatore.fxml)
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -53,7 +54,7 @@ public class MainTestJFX extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
-//			creaLayoutGiocatori();
+			// creaLayoutGiocatori();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,41 +78,37 @@ public class MainTestJFX extends Application {
 		controllerRoot.setPartita(partita);
 		System.out.println(partita);
 
-		List<Giocatore> giocatori = partita.listaGiocatori(numeroGiocatori);
-		for (Giocatore g : giocatori) {
-			System.out.println(g.getNome());
-		}
-		creaLayoutGiocatori();
-	}
-
-	public void creaLayoutGiocatori() {
-
 		try {
-			arrayGiocatore = new BorderPane[numeroGiocatori];
-			// Load LayoutGiocatore overview
-			FXMLLoader loaderLayout = new FXMLLoader();
-			loaderLayout.setLocation(MainTestJFX.class
-					.getResource("view/LayoutGiocatori.fxml"));
-			layoutGiocatore = (GridPane) loaderLayout.load();
+			List<Giocatore> giocatori = partita.listaGiocatori(numeroGiocatori);
 
-			for (int i = 0; i < numeroGiocatori; i++) {
-				System.out.println();
+			FXMLLoader loaderLayoutGiocatore = new FXMLLoader();
+			loaderLayoutGiocatore.setLocation(MainTestJFX.class
+					.getResource("view/LayoutGiocatori.fxml"));
+			layoutGiocatore = (GridPane) loaderLayoutGiocatore.load();
+
+			System.out.println();
+
+			for (Giocatore g : giocatori) {
+				System.out.println(g.getNome());
+
 				// Load Giocatore overview.
 				FXMLLoader loaderGiocatore = new FXMLLoader();
 				loaderGiocatore.setLocation(MainTestJFX.class
 						.getResource("view/Giocatore.fxml"));
-				BorderPane giocatore = (BorderPane) loaderGiocatore.load();
+				BorderPane viewGiocatore = (BorderPane) loaderGiocatore.load();
+				g.setViewGiocatore(viewGiocatore);
 				controllerGiocatore = loaderGiocatore.getController();
-				controllerGiocatore.setNomeGiocatore("Questo è il giocatore " + i);
-				arrayGiocatore[i] = giocatore;
-				arrayGiocatore[i].setUserData("Giocatore"+i+" della partita " +partita);
-				layoutGiocatore.add(arrayGiocatore[i], i, 0);
+				controllerGiocatore.setNomeGiocatore("Questo è il giocatore "
+						+ g.getNome());
 
-				// Set person overview into the center of root layout.
+				layoutGiocatore.add(g.getViewGiocatore(), g.getID(), 0);
+
 			}
 			root.setCenter(layoutGiocatore);
+
 		} catch (Exception e) {
 			e.printStackTrace();
+
 		}
 	}
 }

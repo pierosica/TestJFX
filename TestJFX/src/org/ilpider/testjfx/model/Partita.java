@@ -24,10 +24,10 @@ public class Partita {
 
 		for (int i = 0; i < numeroGiocatori; i++) {
 			Giocatore g = new Giocatore("Giocatore n" + i, 0);
+			g.setID(i);
 			g.setNome("giocatore " + i);
 			giocatori.add(g);
 		}
-
 		return giocatori;
 	}
 }
