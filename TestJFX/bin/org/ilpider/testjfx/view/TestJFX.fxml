@@ -39,7 +39,7 @@
       </VBox>
    </left>
    <top>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -50,7 +50,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox alignment="CENTER_RIGHT" spacing="10.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <RadioButton fx:id="rdb2" mnemonicParsing="false" onAction="#doRdbNumeroGiocatori" selected="true" text="2" textAlignment="RIGHT">
                      <toggleGroup>
@@ -59,10 +59,16 @@
                   </RadioButton>
                   <RadioButton fx:id="rdb3" mnemonicParsing="false" onAction="#doRdbNumeroGiocatori" text="3" textAlignment="RIGHT" toggleGroup="$grpNumeroGiocatori" />
                   <RadioButton fx:id="rdb4" mnemonicParsing="false" onAction="#doRdbNumeroGiocatori" text="4" textAlignment="RIGHT" toggleGroup="$grpNumeroGiocatori" />
-                  <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#doNuovaPartita" text="Nuova Partita" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#doNuovaPartita" text="Nuova Partita" />
                </children>
             </HBox>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
       </GridPane>
    </top>
    <padding>

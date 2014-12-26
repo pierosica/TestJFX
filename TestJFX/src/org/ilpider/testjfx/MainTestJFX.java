@@ -20,8 +20,7 @@ public class MainTestJFX extends Application {
 	private BorderPane root; // il layout del TestJFX.fxml
 	private GridPane layoutGiocatore; // il layout che contiene l'arrayGiocatore
 	private Partita partita; // il modello della partita
-	private Giocatore model; // il modello del Giocatore
-	private int numeroGiocatori;
+//	private int numeroGiocatori;
 	private TestJFXController controllerRoot; // il controller del root
 												// (TestJFX.fxml)
 	private GiocatoreController controllerGiocatore; // il controller del
@@ -38,23 +37,18 @@ public class MainTestJFX extends Application {
 					.getResource("view/TestJFX.fxml"));
 			root = loader.load();
 
-			// model = new Giocatore("Pluto", 0);
 			controllerRoot = loader.getController();
 			controllerRoot.setMainTestJFX(this);
-			controllerRoot.setModel(model);
-			numeroGiocatori = controllerRoot.getNumeroGiocatori();
+			int numeroGiocatori = controllerRoot.getNumeroGiocatori();
 			nuovaPartita(numeroGiocatori);
 			controllerRoot.setPartita(partita);
 
-			// creaLayout();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(
 					getClass().getResource("view/application.css")
 							.toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-
-			// creaLayoutGiocatori();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,7 +73,7 @@ public class MainTestJFX extends Application {
 		System.out.println(partita);
 
 		try {
-			List<Giocatore> giocatori = partita.listaGiocatori(numeroGiocatori);
+			List<Giocatore> listaGiocatori = partita.getListaGiocatori(numeroGiocatori);
 
 			FXMLLoader loaderLayoutGiocatore = new FXMLLoader();
 			loaderLayoutGiocatore.setLocation(MainTestJFX.class
@@ -88,7 +82,7 @@ public class MainTestJFX extends Application {
 
 			System.out.println();
 
-			for (Giocatore g : giocatori) {
+			for (Giocatore g : listaGiocatori) {
 				System.out.println(g.getNome());
 
 				// Load Giocatore overview.

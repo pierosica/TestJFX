@@ -9,6 +9,11 @@ public class Giocatore {
 	private BorderPane viewGiocatore;
 	private int punti;
 
+	public Giocatore(String nome) {
+		super();
+		this.nome = nome;
+	}
+
 	public Giocatore(String nome, int punti) {
 		super();
 		this.nome = nome;

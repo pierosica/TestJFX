@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -12,4 +13,31 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </center>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btn13" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="13" textAlignment="RIGHT" />
+            <Button fx:id="btn16" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="16" textAlignment="RIGHT" />
+            <Button fx:id="btn5" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="5" textAlignment="RIGHT" />
+            <Button fx:id="btn11" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="11" textAlignment="RIGHT" />
+            <Button fx:id="btn8" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="8" textAlignment="RIGHT" />
+            <Button fx:id="btn19" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="19" textAlignment="RIGHT" />
+            <Button fx:id="btn18" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="18" textAlignment="RIGHT" />
+            <Button fx:id="btn20" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="20" textAlignment="RIGHT" />
+            <Button fx:id="btn9" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="9" textAlignment="RIGHT" />
+            <Button fx:id="btn17" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="17" textAlignment="RIGHT" />
+            <Button fx:id="btn14" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="14" textAlignment="RIGHT" />
+            <Button fx:id="btn1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="1" textAlignment="RIGHT" />
+            <Button fx:id="btn4" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="4" textAlignment="RIGHT" />
+            <Button fx:id="btn10" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="10" textAlignment="RIGHT" />
+            <Button fx:id="btnBull" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="bull" textAlignment="RIGHT" />
+            <Button fx:id="btn15" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="15" textAlignment="RIGHT" />
+            <Button fx:id="btn2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="2" textAlignment="RIGHT" />
+            <Button fx:id="btn12" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="12" textAlignment="RIGHT" />
+            <Button fx:id="btn3" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="3" textAlignment="RIGHT" />
+            <Button fx:id="btn6" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="6" textAlignment="RIGHT" />
+            <Button fx:id="btn7" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doBtnNumero" prefWidth="50.0" text="7" textAlignment="RIGHT" />
+         </children>
+      </VBox>
+   </left>
 </BorderPane>

@@ -1,7 +1,6 @@
 package org.ilpider.testjfx.view;
 
 import org.ilpider.testjfx.MainTestJFX;
-import org.ilpider.testjfx.model.Giocatore;
 import org.ilpider.testjfx.model.Partita;
 
 import javafx.event.ActionEvent;
@@ -118,7 +117,7 @@ public class TestJFXController {
 	private Button btnBull; // Value injected by FXMLLoader
 
 	private MainTestJFX mainTestJFX;
-	private Giocatore model;
+//	private Giocatore model;
 	private Partita partita;
 
 	public void setMainTestJFX(MainTestJFX mainTestJFX) {
@@ -192,14 +191,6 @@ public class TestJFXController {
 		rdb2.setUserData(2);
 		rdb3.setUserData(3);
 		rdb4.setUserData(4);
-	}
-
-	public Giocatore getModel() {
-		return model;
-	}
-
-	public void setModel(Giocatore model) {
-		this.model = model;
 	}
 
 	public Partita getPartita() {
