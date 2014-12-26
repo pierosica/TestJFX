@@ -19,11 +19,11 @@ public class Partita {
 		this.numeroGiocatori = numeroGiocatori;
 	}
 
-	public List<Giocatore> listGiocatori(int numeroGiocatori) {
+	public List<Giocatore> listaGiocatori(int numeroGiocatori) {
 		List<Giocatore> giocatori = new ArrayList<>();
-		
-		for ( int i=0;i<numeroGiocatori;i++){
-			Giocatore g=new Giocatore("Giocatore n" + i, 0);
+
+		for (int i = 0; i < numeroGiocatori; i++) {
+			Giocatore g = new Giocatore("Giocatore n" + i, 0);
 			g.setNome("giocatore " + i);
 			giocatori.add(g);
 		}

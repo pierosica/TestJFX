@@ -4,22 +4,27 @@ import java.util.List;
 
 import org.ilpider.testjfx.model.Giocatore;
 import org.ilpider.testjfx.model.Partita;
+import org.ilpider.testjfx.view.GiocatoreController;
 import org.ilpider.testjfx.view.TestJFXController;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.fxml.FXMLLoader;
 
 public class MainTestJFX extends Application {
 
-	private Stage primaryStage;
-	private BorderPane root;
-	private TestJFXController controller;
-	private Partita partita;
-	private Giocatore model;
-	private int numeroGiocatori = 0;
+	private Stage primaryStage; //la finestra dell'applicazione
+	private BorderPane root; // il layout del TestJFX.fxml
+	private GridPane layoutGiocatore; // il layout che contiene l'arrayGiocatore
+	private BorderPane[] arrayGiocatore; // l'array dei singolo Giocatore.fxml
+	private TestJFXController controllerRoot; // il controller del root (TestJFX.fxml) 
+	private GiocatoreController controllerGiocatore; // il controller del root (TestJFX.fxml) 
+	private Partita partita; // il modello della partita
+	private Giocatore model; // il modello del Giocatore
+	private int numeroGiocatori; 
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -33,14 +38,14 @@ public class MainTestJFX extends Application {
 			root = loader.load();
 
 			// model = new Giocatore("Pluto", 0);
-			controller = loader.getController();
-			controller.setMainTestJFX(this);
-			controller.setModel(model);
-			numeroGiocatori = controller.getNumeroGiocatori();
+			controllerRoot = loader.getController();
+			controllerRoot.setMainTestJFX(this);
+			controllerRoot.setModel(model);
+			numeroGiocatori = controllerRoot.getNumeroGiocatori();
 			nuovaPartita(numeroGiocatori);
-			controller.setPartita(partita);
+			controllerRoot.setPartita(partita);
 
-			creaLayout();
+			// creaLayout();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(
 					getClass().getResource("view/application.css")
@@ -48,7 +53,7 @@ public class MainTestJFX extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
-			creaLayout();
+//			creaLayoutGiocatori();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,28 +74,44 @@ public class MainTestJFX extends Application {
 
 	public void nuovaPartita(int numeroGiocatori) {
 		partita = new Partita(numeroGiocatori);
-		controller.setPartita(partita);
+		controllerRoot.setPartita(partita);
 		System.out.println(partita);
 
-		List<Giocatore> giocatori = partita.listGiocatori(numeroGiocatori);
+		List<Giocatore> giocatori = partita.listaGiocatori(numeroGiocatori);
 		for (Giocatore g : giocatori) {
 			System.out.println(g.getNome());
 		}
+		creaLayoutGiocatori();
 	}
 
-	public void creaLayout() {
-		for (int i = 0; i < numeroGiocatori; i++) {
-			try {
-				// Load person overview.
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(MainTestJFX.class
+	public void creaLayoutGiocatori() {
+
+		try {
+			arrayGiocatore = new BorderPane[numeroGiocatori];
+			// Load LayoutGiocatore overview
+			FXMLLoader loaderLayout = new FXMLLoader();
+			loaderLayout.setLocation(MainTestJFX.class
+					.getResource("view/LayoutGiocatori.fxml"));
+			layoutGiocatore = (GridPane) loaderLayout.load();
+
+			for (int i = 0; i < numeroGiocatori; i++) {
+				System.out.println();
+				// Load Giocatore overview.
+				FXMLLoader loaderGiocatore = new FXMLLoader();
+				loaderGiocatore.setLocation(MainTestJFX.class
 						.getResource("view/Giocatore.fxml"));
-				BorderPane giocatoreLayout = (BorderPane) loader.load();
+				BorderPane giocatore = (BorderPane) loaderGiocatore.load();
+				controllerGiocatore = loaderGiocatore.getController();
+				controllerGiocatore.setNomeGiocatore("Questo è il giocatore " + i);
+				arrayGiocatore[i] = giocatore;
+				arrayGiocatore[i].setUserData("Giocatore"+i+" della partita " +partita);
+				layoutGiocatore.add(arrayGiocatore[i], i, 0);
+
 				// Set person overview into the center of root layout.
-				root.setCenter(giocatoreLayout);
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+			root.setCenter(layoutGiocatore);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
