@@ -140,7 +140,7 @@ public class TestJFXController {
 		// model.setNome(aaa);
 		// System.out.println("Nel bottone leggo quanti giocatori ha la partita: "
 		// + getNumeroGiocatori());
-		System.out.println(partita.getNumeroGiocatoriAttuali());
+//		System.out.println(partita.getNumeroGiocatoriAttuali());
 		
 		
 	}

@@ -20,6 +20,14 @@ public class Giocatore {
 		this.punti = punti;
 	}
 
+	public Giocatore(int iD, String nome, BorderPane viewGiocatore, int punti) {
+		super();
+		ID = iD;
+		this.nome = nome;
+		this.viewGiocatore = viewGiocatore;
+		this.punti = punti;
+	}
+
 	public int getID() {
 		return ID;
 	}
