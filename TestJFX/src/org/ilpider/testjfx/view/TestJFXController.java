@@ -117,18 +117,7 @@ public class TestJFXController {
 	private Button btnBull; // Value injected by FXMLLoader
 
 	private MainTestJFX mainTestJFX;
-//	private Giocatore model;
 	private Partita partita;
-
-	public void setMainTestJFX(MainTestJFX mainTestJFX) {
-		this.mainTestJFX = mainTestJFX;
-	}
-
-	public int getNumeroGiocatori() {
-		Toggle aaa = grpNumeroGiocatori.getSelectedToggle();
-		int numeroGiocatori = (int) aaa.getUserData();
-		return numeroGiocatori;
-	}
 
 	@FXML
 	void doBtnNumero(ActionEvent event) {
@@ -141,25 +130,17 @@ public class TestJFXController {
 		// System.out.println("Nel bottone leggo quanti giocatori ha la partita: "
 		// + getNumeroGiocatori());
 //		System.out.println(partita.getNumeroGiocatoriAttuali());
-		
-		
 	}
 
 	@FXML
 	void doNuovaPartita(ActionEvent event) {
-		mainTestJFX.nuovaPartita(getNumeroGiocatori());
-		System.out.println("La nuova partita avra' "
-				+ partita.getNumeroGiocatoriAttuali() + " giocatori");
+		mainTestJFX.nuovaPartita(leggiNumeroGiocatori());
 	}
 
 	@FXML
 	void doRdbNumeroGiocatori(ActionEvent event) {
-		mainTestJFX.nuovaPartita(getNumeroGiocatori());
-		System.out.println("La nuova partita avra' "
-				+ partita.getNumeroGiocatoriAttuali() + " giocatori");
-		// System.out.println(event.getSource());
-		// Toggle ccc = (Toggle) event.getSource();
-		// System.out.println(ccc.getUserData());
+		// se serve qui posso gestire un event quando cambia il selectedToggle
+		// ad esempio con mainTestJFX.nuovaPartita(getNumeroGiocatori());
 	}
 
 	@FXML
@@ -193,12 +174,21 @@ public class TestJFXController {
 		rdb4.setUserData(4);
 	}
 
+	public int leggiNumeroGiocatori() {
+		Toggle aaa = grpNumeroGiocatori.getSelectedToggle();
+		int numeroGiocatori = (int) aaa.getUserData();
+		return numeroGiocatori;
+	}
+
+	public void setMainTestJFX(MainTestJFX mainTestJFX) {
+		this.mainTestJFX = mainTestJFX;
+	}
+
 	public Partita getPartita() {
 		return partita;
 	}
 
 	public void setPartita(Partita partita) {
 		this.partita = partita;
-
 	}
 }

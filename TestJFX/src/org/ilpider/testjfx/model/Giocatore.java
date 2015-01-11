@@ -14,7 +14,7 @@ public class Giocatore {
 		this.nome = nome;
 	}
 
-	public Giocatore(String nome, int punti) {
+/*	public Giocatore(String nome, int punti) {
 		super();
 		this.nome = nome;
 		this.punti = punti;
@@ -26,7 +26,7 @@ public class Giocatore {
 		this.nome = nome;
 		this.viewGiocatore = viewGiocatore;
 		this.punti = punti;
-	}
+	} */
 
 	public int getID() {
 		return ID;
