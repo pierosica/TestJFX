@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -8,10 +9,13 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ilpider.testjfx.view.GiocatoreController">
    <top>
-      <VBox spacing="5.0">
+      <VBox alignment="CENTER_RIGHT" spacing="5.0">
          <children>
-            <TextField fx:id="txtNomeGiocatore" promptText="Giocatore 1" BorderPane.alignment="CENTER" />
-            <Label text="Label" />
+            <TextField fx:id="txtNomeGiocatore" promptText="Inserisci Nome Giocatore" BorderPane.alignment="CENTER" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="-Infinity" text="0" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font size="40.0" />
+               </font></Label>
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -22,29 +26,92 @@
       <VBox minHeight="200.0" minWidth="100.0" BorderPane.alignment="CENTER" />
    </center>
    <left>
-      <VBox spacing="5.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" spacing="3.0" BorderPane.alignment="CENTER_RIGHT">
          <children>
-            <Button fx:id="btn1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="0.0" minWidth="50.0" mnemonicParsing="false" text="1" textAlignment="RIGHT" />
-            <Button fx:id="btn2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="2" textAlignment="RIGHT" />
-            <Button fx:id="btn3" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="3" textAlignment="RIGHT" />
-            <Button fx:id="btn4" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="4" textAlignment="RIGHT" />
-            <Button fx:id="btn5" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="5" textAlignment="RIGHT" />
-            <Button fx:id="btn6" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="6" textAlignment="RIGHT" />
-            <Button fx:id="btn7" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="7" textAlignment="RIGHT" />
-            <Button fx:id="btn8" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="8" textAlignment="RIGHT" />
-            <Button fx:id="btn9" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="9" textAlignment="RIGHT" />
-            <Button fx:id="btn10" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="10" textAlignment="RIGHT" />
-            <Button fx:id="btn11" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="11" textAlignment="RIGHT" />
-            <Button fx:id="btn12" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="12" textAlignment="RIGHT" />
-            <Button fx:id="btn13" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="13" textAlignment="RIGHT" />
-            <Button fx:id="btn14" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="14" textAlignment="RIGHT" />
-            <Button fx:id="btn15" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="15" textAlignment="RIGHT" />
-            <Button fx:id="btn16" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="16" textAlignment="RIGHT" />
-            <Button fx:id="btn17" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="17" textAlignment="RIGHT" />
-            <Button fx:id="btn18" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="18" textAlignment="RIGHT" />
-            <Button fx:id="btn19" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="19" textAlignment="RIGHT" />
-            <Button fx:id="btn20" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="20" textAlignment="RIGHT" />
-            <Button fx:id="btnBull" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="50.0" mnemonicParsing="false" text="bull" textAlignment="RIGHT" />
+            <Button fx:id="btn1" graphicTextGap="0.0" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="1" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn2" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="2" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn3" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="3" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn4" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="4" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn5" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="5" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn6" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="6" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn7" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="7" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn8" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="8" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn9" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="9" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn10" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="10" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn11" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="11" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn12" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="12" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn13" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="13" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn14" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="14" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn15" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="15" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn16" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="16" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn17" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="17" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn18" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="18" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn19" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="19" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btn20" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="20" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnBull" minWidth="45.0" mnemonicParsing="false" prefWidth="45.0" text="bull" textAlignment="RIGHT" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font></Button>
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

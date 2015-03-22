@@ -1,11 +1,16 @@
 package org.ilpider.testjfx.view;
 
+import java.util.Optional;
+
 import org.ilpider.testjfx.MainTestJFX;
 import org.ilpider.testjfx.model.Partita;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
@@ -13,111 +18,60 @@ import javafx.scene.control.ToggleGroup;
 public class TestJFXController {
 
 	@FXML
-	// fx:id="grpNumeroGiocatori"
-	private ToggleGroup grpNumeroGiocatori; // Value injected by FXMLLoader
-
+	private ToggleGroup grpNumeroGiocatori;
 	@FXML
-	// fx:id="rdb2"
-	private RadioButton rdb2; // Value injected by FXMLLoader
-
+	private RadioButton rdb2;
 	@FXML
-	// fx:id="rdb3"
-	private RadioButton rdb3; // Value injected by FXMLLoader
-
+	private RadioButton rdb3;
 	@FXML
-	// fx:id="rdb4"
-	private RadioButton rdb4; // Value injected by FXMLLoader
-
+	private RadioButton rdb4;
 	@FXML
-	// fx:id="btnNuovaPartita"
-	private Button btnNuovaPartita; // Value injected by FXMLLoader
-
+	private Button btnNuovaPartita;
 	@FXML
-	// fx:id="btn1"
-	private Button btn1; // Value injected by FXMLLoader
-
+	private Button btn1;
 	@FXML
-	// fx:id="btn2"
-	private Button btn2; // Value injected by FXMLLoader
-
+	private Button btn2;
 	@FXML
-	// fx:id="btn3"
-	private Button btn3; // Value injected by FXMLLoader
-
+	private Button btn3;
 	@FXML
-	// fx:id="btn4"
-	private Button btn4; // Value injected by FXMLLoader
-
+	private Button btn4;
 	@FXML
-	// fx:id="btn5"
-	private Button btn5; // Value injected by FXMLLoader
-
+	private Button btn5;
 	@FXML
-	// fx:id="btn6"
-	private Button btn6; // Value injected by FXMLLoader
-
+	private Button btn6;
 	@FXML
-	// fx:id="btn7"
-	private Button btn7; // Value injected by FXMLLoader
-
+	private Button btn7;
 	@FXML
-	// fx:id="btn8"
-	private Button btn8; // Value injected by FXMLLoader
-
+	private Button btn8;
 	@FXML
-	// fx:id="btn9"
-	private Button btn9; // Value injected by FXMLLoader
-
+	private Button btn9;
 	@FXML
-	// fx:id="btn10"
-	private Button btn10; // Value injected by FXMLLoader
-
+	private Button btn10;
 	@FXML
-	// fx:id="bt11"
-	private Button btn11; // Value injected by FXMLLoader
-
+	private Button btn11;
 	@FXML
-	// fx:id="btn12"
-	private Button btn12; // Value injected by FXMLLoader
-
+	private Button btn12;
 	@FXML
-	// fx:id="btn13"
-	private Button btn13; // Value injected by FXMLLoader
-
+	private Button btn13;
 	@FXML
-	// fx:id="btn14"
-	private Button btn14; // Value injected by FXMLLoader
-
+	private Button btn14;
 	@FXML
-	// fx:id="btn15"
-	private Button btn15; // Value injected by FXMLLoader
-
+	private Button btn15;
 	@FXML
-	// fx:id="btn16"
-	private Button btn16; // Value injected by FXMLLoader
-
+	private Button btn16;
 	@FXML
-	// fx:id="btn17"
-	private Button btn17; // Value injected by FXMLLoader
-
+	private Button btn17;
 	@FXML
-	// fx:id="btn18"
-	private Button btn18; // Value injected by FXMLLoader
-
+	private Button btn18;
 	@FXML
-	// fx:id="btn19"
-	private Button btn19; // Value injected by FXMLLoader
-
+	private Button btn19;
 	@FXML
-	// fx:id="btn20"
-	private Button btn20; // Value injected by FXMLLoader
-
+	private Button btn20;
 	@FXML
-	// fx:id="btnBull"
-	private Button btnBull; // Value injected by FXMLLoader
+	private Button btnBull;
 
-	private MainTestJFX mainTestJFX;
 	private Partita partita;
+	private MainTestJFX mainTestJFX;
 
 	@FXML
 	void doBtnNumero(ActionEvent event) {
@@ -129,12 +83,29 @@ public class TestJFXController {
 		// model.setNome(aaa);
 		// System.out.println("Nel bottone leggo quanti giocatori ha la partita: "
 		// + getNumeroGiocatori());
-//		System.out.println(partita.getNumeroGiocatoriAttuali());
+		// System.out.println(partita.getNumeroGiocatoriAttuali());
 	}
 
 	@FXML
 	void doNuovaPartita(ActionEvent event) {
-		mainTestJFX.nuovaPartita(leggiNumeroGiocatori());
+
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Confirmation Dialog");
+		alert.setHeaderText("Look, a Confirmation Dialog");
+		alert.setContentText("Are you ok with this?");
+
+		Optional<ButtonType> result = alert.showAndWait();
+		if (result.get() == ButtonType.OK){
+		    // ... user chose OK
+			int numGiocatori = leggiNumeroGiocatori();
+			partita = new Partita(numGiocatori);
+			partita.setMainTestJFX(mainTestJFX);
+			mainTestJFX.inizializzaLayoutGiocatori(partita.creaLayoutGiocatori());
+
+		} else {
+			// ... user chose CANCEL or closed the dialog
+			System.out.println("premuto cancel");
+		}
 	}
 
 	@FXML
@@ -144,8 +115,7 @@ public class TestJFXController {
 	}
 
 	@FXML
-	// This method is called by the FXMLLoader when initialization is
-	// complete
+	// This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
 		assert btn1 != null : "fx:id=\"btn1\" was not injected: check your FXML file 'TestJFX.fxml'.";
 		assert btn2 != null : "fx:id=\"btn2\" was not injected: check your FXML file 'TestJFX.fxml'.";
@@ -181,7 +151,7 @@ public class TestJFXController {
 	}
 
 	public void setMainTestJFX(MainTestJFX mainTestJFX) {
-		this.mainTestJFX = mainTestJFX;
+		 this.mainTestJFX = mainTestJFX;
 	}
 
 	public Partita getPartita() {

@@ -17,9 +17,10 @@
         linear-gradient(#d6d6d6 50.0%, white 100.0%),
         radial-gradient(center 50.0% -40.0%, radius 200.0%, #e6e6e6 45.0%, rgba(230.0,230.0,230.0,0.0) 50.0%);
     -fx-background-radius: 3.0;
-    -fx-background-insets: 0.0,1.0,1.0;
+    -fx-background-insets: 0.0;
     -fx-text-fill: black;
     -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 3.0, 0.0 , 0.0 , 1.0 );
+
 }
 .button:pressed{
     -fx-background-color: 

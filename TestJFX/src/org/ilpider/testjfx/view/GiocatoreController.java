@@ -1,9 +1,5 @@
 package org.ilpider.testjfx.view;
 
-/**
- * Sample Skeleton for 'Giocatore.fxml' Controller Class
- */
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,70 +16,48 @@ public class GiocatoreController {
 
     @FXML // fx:id="btn1"
     private Button btn1; // Value injected by FXMLLoader
-
     @FXML // fx:id="btn2"
     private Button btn2; // Value injected by FXMLLoader
-
     @FXML // fx:id="btn3"
     private Button btn3; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn4"
     private Button btn4; // Value injected by FXMLLoader
-
     @FXML // fx:id="btn5"
     private Button btn5; // Value injected by FXMLLoader
-
     @FXML // fx:id="btn6"
     private Button btn6; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn7"
     private Button btn7; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn8"
     private Button btn8; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn9"
     private Button btn9; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn10"
     private Button btn10; // Value injected by FXMLLoader
-
     @FXML // fx:id="btn11"
     private Button btn11; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn12"
     private Button btn12; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn13"
     private Button btn13; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn14"
     private Button btn14; // Value injected by FXMLLoader
-
     @FXML // fx:id="btn15"
     private Button btn15; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn16"
     private Button btn16; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn17"
     private Button btn17; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn18"
     private Button btn18; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn19"
     private Button btn19; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btn20"
     private Button btn20; // Value injected by FXMLLoader
-    
     @FXML // fx:id="btnBull"
     private Button btnBull; // Value injected by FXMLLoader
-
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
-
     @FXML // fx:id="txtNomeGiocatore"
     private TextField txtNomeGiocatore; // Value injected by FXMLLoader
 
