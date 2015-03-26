@@ -1,5 +1,7 @@
 package org.ilpider.testjfx.model;
 
+import org.ilpider.testjfx.view.GiocatoreController;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
@@ -9,13 +11,21 @@ public class Giocatore {
 	private String nome;
 	private BorderPane viewGiocatore;
 	private int punti;
+	private GiocatoreController giocatoreController;
 
 	// Costruttore di default
 	public Giocatore(int ID) {
 		super();
 		this.ID = ID;
-		this.nome = "Giocatore " + this.ID;
 		this.punti = 0;
+
+		giocatoreController = new GiocatoreController();
+		this.nome = giocatoreController.getNomeGiocatore();
+		
+		/*
+		 * syso DEBUG
+		 */
+//		System.out.println("nome: " + this.nome);
 		setViewGiocatore();
 	}
 
@@ -43,7 +53,7 @@ public class Giocatore {
 
 		try {
 			FXMLLoader loaderViewGiocatore = new FXMLLoader(); 
-			loaderViewGiocatore.setLocation(getClass().getResource("../view/Giocatore.fxml"));
+			loaderViewGiocatore.setLocation(getClass().getResource("../view/LayoutGiocatore.fxml"));
 			this.viewGiocatore =  loaderViewGiocatore.load();
 
 		} catch (Exception e) {

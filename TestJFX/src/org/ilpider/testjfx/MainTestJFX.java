@@ -1,10 +1,6 @@
 package org.ilpider.testjfx;
 
-//import java.util.List;
-//
-//import org.ilpider.testjfx.model.Giocatore;
-//import org.ilpider.testjfx.model.Partita;
-import org.ilpider.testjfx.view.TestJFXController;
+import org.ilpider.testjfx.view.ControllerRoot;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -16,28 +12,28 @@ import javafx.fxml.FXMLLoader;
 public class MainTestJFX extends Application {
 
 	private Stage primaryStage;
-	private BorderPane root;
-	private TestJFXController controllerRoot;
+	private BorderPane layoutRoot;
+	private ControllerRoot controllerLayoutRoot;
 
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("TestJFX");
 
-		inizializzaRoot();
+		inizializzaLayoutRoot();
 	}
 
-	public void inizializzaRoot() {
+	public void inizializzaLayoutRoot() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainTestJFX.class
-					.getResource("view/TestJFX.fxml"));
-			root = loader.load();
+					.getResource("view/LayoutRoot.fxml"));
+			layoutRoot = loader.load();
 
-			controllerRoot = loader.getController();
-			controllerRoot.setMainTestJFX(this);
+			controllerLayoutRoot = loader.getController();
+			controllerLayoutRoot.setMainTestJFX(this);
 
-			Scene scene = new Scene(root);
+			Scene scene = new Scene(layoutRoot);
 			scene.getStylesheets().add(
 					getClass().getResource("view/application.css")
 							.toExternalForm());
@@ -50,15 +46,10 @@ public class MainTestJFX extends Application {
 	}
 
 	public void inizializzaLayoutGiocatori(GridPane layoutGiocatori) {
-		root.setCenter(layoutGiocatori);
+		layoutRoot.setCenter(layoutGiocatori);
 	}
 
 	public static void main(String[] args) {
 		launch(args);
 	}
-
-	public BorderPane getRoot() {
-		return root;
-	}
-
 }

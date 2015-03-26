@@ -86,6 +86,10 @@ public class GiocatoreController {
         assert btnBull != null : "fx:id=\"btnBull\" was not injected: check your FXML file 'Giocatore.fxml'.";
         assert txtNomeGiocatore != null : "fx:id=\"txtNomeGiocatore\" was not injected: check your FXML file 'Giocatore.fxml'.";
 
+        //lambda expression per gestire l'evento di textChange
+//        txtNomeGiocatore.textProperty().addListener((observable, oldValue, newValue) -> {
+//            System.out.println("TextField " + " Text Changed (newValue: " + newValue + ")");
+//        });
     }
 
 	public String getNomeGiocatore() {

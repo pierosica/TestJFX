@@ -15,7 +15,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
-public class TestJFXController {
+public class ControllerRoot {
 
 	@FXML
 	private ToggleGroup grpNumeroGiocatori;
@@ -89,18 +89,39 @@ public class TestJFXController {
 	@FXML
 	void doNuovaPartita(ActionEvent event) {
 
+		// Apro la finestra di ALERT per conferma novaPartita
+		// TODO fare layout!!
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Confirmation Dialog");
 		alert.setHeaderText("Look, a Confirmation Dialog");
 		alert.setContentText("Are you ok with this?");
 
 		Optional<ButtonType> result = alert.showAndWait();
-		if (result.get() == ButtonType.OK){
-		    // ... user chose OK
+
+		// TODO credo che questo sia il posto giusto per gestire la questione
+		// del
+		// nome giocatore ad ogni nuova partita
+
+		/*
+		 * syso DEBUG
+		 */
+//		System.out.println("prima: " + this.partita);
+//		System.out.println("");
+
+		
+		if (result.get() == ButtonType.OK) {
+			// ... user chose OK
 			int numGiocatori = leggiNumeroGiocatori();
 			partita = new Partita(numGiocatori);
-			partita.setMainTestJFX(mainTestJFX);
-			mainTestJFX.inizializzaLayoutGiocatori(partita.creaLayoutGiocatori());
+			// partita.setMainTestJFX(mainTestJFX);
+			mainTestJFX.inizializzaLayoutGiocatori(partita
+					.creaLayoutGiocatori());
+
+			/*
+			 * syso DEBUG
+			 */
+//			System.out.println("dopo: " + this.partita);
+//			System.out.println("");
 
 		} else {
 			// ... user chose CANCEL or closed the dialog
@@ -151,7 +172,7 @@ public class TestJFXController {
 	}
 
 	public void setMainTestJFX(MainTestJFX mainTestJFX) {
-		 this.mainTestJFX = mainTestJFX;
+		this.mainTestJFX = mainTestJFX;
 	}
 
 	public Partita getPartita() {
